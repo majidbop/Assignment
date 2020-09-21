@@ -1,0 +1,2 @@
+*.json
+tests/e2e/*

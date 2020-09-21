@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+    volumes:
+      - ./databases/storage:/var/lib/mysql
+  app:
+    build:
+      context: ./
+      dockerfile: ./deployments/dockerfiles/app.dockerfile
+    depends_on:
+      - "mysql"
+    ports:
+      - 80:80
+    environment:
+      - PORT=80
+      - LOG_CONSOLE_LEVEL=Debug
+      - DB_ADDRESS=127.0.0.1
+      - DB_USER=root
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=test
+      - NODE_ENV=development
+
+    volumes:
+      - ./src:/app/src

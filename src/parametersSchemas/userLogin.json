@@ -1,0 +1,7 @@
+{
+    "required": ["username", "password"],
+    "properties": {
+        "username": { "type": "string", "format": "email" },
+        "password": { "type": "string", "minLength": 2 }
+    }
+}
