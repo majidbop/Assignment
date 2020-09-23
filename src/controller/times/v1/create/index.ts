@@ -1,0 +1,2 @@
+
+export { registerTime } from './register';
