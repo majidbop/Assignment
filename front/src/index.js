@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/app/App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import reducer from './reducer'
+
+const preloadedState = window.__PRELOADED_STATE__
+delete window.__PRELOADED_STATE__
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(reducer, preloadedState, applyMiddleware(sagaMiddleware))
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

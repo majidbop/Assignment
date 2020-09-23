@@ -68,8 +68,6 @@ class Login extends PureComponent {
                         <TextField id="outlined-basic" label="Username" variant="outlined" className="col-12 login__textbox" />
 
                         <TextField id="outlined-basic" type="password" label="Password" password={true} variant="outlined" className="col-12 login__textbox" />
-
-
                         <Button className="col-8 center login__btn" variant="contained" color="primary">
                             Login
                         </Button>

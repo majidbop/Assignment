@@ -3,13 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Login from '../login/login';
 import './styles/App.scss';
 
 function App() {
   return (
+
     <div className="App">
       <div className="container">
         <Router>
