@@ -49,6 +49,8 @@ class Login extends PureComponent {
         }
 
         this.setState({ errorMessageEmail: '', errorMessagePassword: '' })
+        const { userLoggedInRequest } = this.props
+        userLoggedInRequest(username, password)
         return true
     }
 
@@ -68,7 +70,7 @@ class Login extends PureComponent {
                         <TextField id="outlined-basic" label="Username" variant="outlined" className="col-12 login__textbox" />
 
                         <TextField id="outlined-basic" type="password" label="Password" password={true} variant="outlined" className="col-12 login__textbox" />
-                        <Button className="col-8 center login__btn" variant="contained" color="primary">
+                        <Button className="col-8 center login__btn" variant="contained" color="primary" onClick={this.onLoginClick}>
                             Login
                         </Button>
                     </form>

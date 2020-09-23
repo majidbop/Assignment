@@ -3,7 +3,7 @@ import {
 } from '../actions'
 import initialState from '../../../reducer/initialState'
 
-function menu(state = initialState, action) {
+function userReducer(state = initialState, action) {
     switch (action.type) {
         case USER_LOGGED_IN:
             return {
@@ -14,4 +14,4 @@ function menu(state = initialState, action) {
             return state
     }
 }
-export default menu
+export default userReducer
