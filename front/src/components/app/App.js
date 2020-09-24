@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Login from '../login/login';
+import Login from '../login/loginComponent';
 import './styles/App.scss';
 
 function App() {
