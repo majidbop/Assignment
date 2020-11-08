@@ -11,7 +11,8 @@ export async function getAthletes(filters: Filter[], page: number, limit: number
                 filter.name = 'skillName';
                 return getAthleteBySkill([filter])
             case 'competition':
-            // find all corresponding user-competition id
+                filter.name = 'champName';
+            // return getAthleteByChampions([filter])
             default:
                 break;
         }
