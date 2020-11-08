@@ -9,9 +9,13 @@ const notFoundRoute = (req: any, res: any, next: any) => {
     next(new NotFoundError(-102))
 }
 import { userRoutes } from './controller/users'
+import { timeRoutes } from './controller/times'
+import { athletesRoutes } from './controller/athletes'
 
 const createApp = (app: any) => {
     app.use(traceId)
+    app.use(athletesRoutes)
+    app.use(timeRoutes)
     app.use(userRoutes)
     app.use(notFoundRoute)
     app.use(errorMiddleware)

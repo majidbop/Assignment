@@ -1,4 +1,4 @@
-import userPostRoutes = require('express');
+import express from 'express'
 import { validateRequestProperty } from '../../../../middleware/validateRequestProperty'
 
 import {
@@ -10,8 +10,10 @@ import { register } from '../create';
 import { login } from '../read';
 
 
-userPostRoutes.Router().post('/login', validateRequestProperty(-105, userLogin, 'body'), login)
-userPostRoutes.Router().post('/', validateRequestProperty(-103, userRegister, 'body'), register)
+const userPostRoutes = express.Router()
+
+userPostRoutes.post('/login', validateRequestProperty(-105, userLogin, 'body'), login)
+userPostRoutes.post('/', validateRequestProperty(-103, userRegister, 'body'), register)
 
 
 export { userPostRoutes }

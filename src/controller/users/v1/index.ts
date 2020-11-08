@@ -1,4 +1,4 @@
-import versionOneRoutes = require('express');
+import express from 'express';
 import { userPostRoutes } from './routers/post';
-versionOneRoutes.Router().use(userPostRoutes)
+const versionOneRoutes = express.Router().use(userPostRoutes)
 export { versionOneRoutes }

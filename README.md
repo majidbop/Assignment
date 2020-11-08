@@ -133,15 +133,11 @@ Unfortunately, because of tight deadline prefer to don't right the web app by TD
 - [x] Data migration and dump file
 - [x] Model for Skills, Competition, skills and all relation in between
 - [x] DB sources for mysql
-- [ ] Controller
-- [ ] Athlete create controller should work properly
-- [ ] Skill controller should work properly
-- [ ] Competition controller should work properly
-- [ ] Search function in Athlete should work properly
+- [ ] Get Controllers
 - [ ] Search unit test
-- [ ] in skill create controller function should check same skill doesn't exist in table
-- [ ] in competition create controller function should check same competition doesn't exist in table (with same year and name)
-- [ ] Create skill and competition if they are not exist in athlete endpoint
-- [ ] Run code coverage
-- [ ] Add CI/CD
-- [ ] Add K8S deployment file
+- [ ] Create Controllers
+- [ ] Unit tests
+- [ ] code coverage at least 80%
+- [ ] Add Jenkins CI/CD
+- [ ] Add terraform deployment on AWS
+- [ ] Add K8S deployment files

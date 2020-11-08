@@ -1,7 +1,7 @@
-import timeRoutes = require('express')
+import express from 'express'
 
 import { versionOneRoutes } from './v1'
 
-timeRoutes.Router().use('/v1/times/', versionOneRoutes)
+const timeRoutes = express.Router().use('/v1/times/', versionOneRoutes)
 
 export { timeRoutes }
