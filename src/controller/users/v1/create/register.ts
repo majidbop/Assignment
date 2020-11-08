@@ -11,7 +11,7 @@ export const register = async (req: any, res: any, next: any) => {
         log.info('register user in user controller called')
         const user = await userServices.registerUser(username, password, name);
         const token = await tokenServices.generateToken(user);
-        const response = <User>{ authToken: token.authToken, ...user }
+        const response = { authToken: token.authToken, ...user } as User
         res.send(response);
     } catch (error) {
         next(error)

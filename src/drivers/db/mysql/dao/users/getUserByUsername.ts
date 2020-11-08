@@ -12,7 +12,7 @@ export async function getUserByUsername(username: string): Promise<User[]> {
             SQL`SELECT * FROM users WHERE username=${username};`)
 
         log.info(`the result of getUserByUsername is ${JSON.stringify(result)}`)
-        return result.map((user: any) => <User>user)
+        return result.map((user: any) => user as User)
     } catch (error) {
         if (error instanceof BaseError) {
             throw error

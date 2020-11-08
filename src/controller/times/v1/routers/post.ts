@@ -10,4 +10,4 @@ import { registerTime } from '../create';
 timesPostRoutes.Router().post('/', validateRequestProperty(-103, timeRegister, 'body'), registerTime)
 
 
-export { timesPostRoutes } 
+export { timesPostRoutes }

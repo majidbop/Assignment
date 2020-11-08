@@ -1,4 +1,4 @@
-create table Tokens (
+CREATE TABLE IF NOT EXISTS Tokens (
     id int not null AUTO_INCREMENT PRIMARY KEY,
     authToken varchar(100) not null,
     userId int not null,

@@ -6,7 +6,7 @@ import { LOG_LEVELS, LOG_LEVEL_INDEX } from '../utility/enums'
 const logger = (level: LOG_LEVEL_INDEX, date: String, ...msg: any[]) => {
     if (process.env.LOG_CONSOLE_LEVEL || false) {
         if (process.env.LOG_CONSOLE_LEVEL || false) {
-            const selectedLevel: LOG_LEVELS = (<any>LOG_LEVELS)[process.env.LOG_CONSOLE_LEVEL.toUpperCase()];
+            const selectedLevel: LOG_LEVELS = (LOG_LEVELS as any)[process.env.LOG_CONSOLE_LEVEL.toUpperCase()];
             if (level <= selectedLevel) {
                 consoleLogger.log(`${date} [${level}]`, ...msg)
             }

@@ -1,0 +1,1 @@
+{"version":3,"file":"traceId.js","sourceRoot":"","sources":["../../src/middleware/traceId.ts"],"names":[],"mappings":";;;;;;AAAA,+BAAkC;AAClC,wDAAgC;AAEnB,QAAA,aAAa,GAAG,CAAC,GAAQ,EAAE,GAAQ,EAAE,IAAS,EAAE,EAAE;IAE3D,GAAG,CAAC,OAAO,GAAG,SAAI,EAAE,CAAA;IACpB,aAAG,CAAC,IAAI,CAAC,YAAY,GAAG,CAAC,OAAO,yBAAyB,CAAC,CAAA;IAC1D,IAAI,EAAE,CAAA;AACV,CAAC,CAAA"}

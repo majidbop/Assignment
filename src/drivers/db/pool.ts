@@ -7,7 +7,7 @@ export class DbConnection {
     static isConnected(): boolean {
         return DbConnection.pool != null
     }
-    static getPool(): any { //Todo: define interface for pool
+    static getPool(): any { // Todo: define interface for pool
         if (!DbConnection.pool) {
             throw new BaseError('DB have not been connected', 500, 104)
         }

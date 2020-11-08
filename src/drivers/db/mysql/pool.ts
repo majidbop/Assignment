@@ -6,7 +6,7 @@ export = {
     connect(): mysql.Pool | undefined {
         log.info('Going to create a pool to connect to mysql')
         const mysqlInstance = mysql.createPool({
-            connectionLimit: 10, //Todo: read from config
+            connectionLimit: 10, // Todo: read from config
             host: process.env.DB_ADDRESS,
             user: process.env.DB_USER,
             password: process.env.DB_PASS,

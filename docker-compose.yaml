@@ -6,14 +6,33 @@ services:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=test
+
+  migration:
+    image: flyway/flyway:latest
+    command: ["migrate"]
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 2
     volumes:
-      - ./databases/storage:/var/lib/mysql
+      - ./databases/sql:/flyway/sql
+      - ./databases/conf:/flyway/conf
+    depends_on:
+      - mysql
   app:
     build:
       context: ./
       dockerfile: ./deployments/dockerfiles/app.dockerfile
     depends_on:
-      - "mysql"
+      - mysql
+      - migration
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 2
     ports:
       - 80:80
     environment:

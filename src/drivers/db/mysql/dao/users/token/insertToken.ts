@@ -12,7 +12,7 @@ export async function insertToken(authToken: string, user: User): Promise<Token>
         const result = await runQuery(
             SQL`INSERT INTO tokens (authToken, userId, username, createdAt) VALUES (${authToken}, ${user.id}, ${user.username}, NOW())`
         )
-        return <Token>{ id: result.insertId, authToken: authToken }
+        return { id: result.insertId, authToken } as Token
     } catch (error) {
         if (error instanceof BaseError) {
             throw error

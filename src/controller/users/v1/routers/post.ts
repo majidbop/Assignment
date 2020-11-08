@@ -14,4 +14,4 @@ userPostRoutes.Router().post('/login', validateRequestProperty(-105, userLogin, 
 userPostRoutes.Router().post('/', validateRequestProperty(-103, userRegister, 'body'), register)
 
 
-export { userPostRoutes } 
+export { userPostRoutes }

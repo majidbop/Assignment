@@ -10,7 +10,7 @@ export async function readUserTokens(user: User): Promise<Token | undefined> {
         const result = await runQuery(
             SQL`SELECT *  from tokens WHERE userId=${user.id} ORDER BY createdAt desc LIMIT 0, 1;`)
 
-        if (result.length > 0) return <Token>result[0];
+        if (result.length > 0) return result[0] as Token;
         return undefined;
     } catch (error) {
         if (error instanceof BaseError) {

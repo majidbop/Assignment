@@ -1,0 +1,10 @@
+{
+    "required": ["username", "name", "password"],
+    "properties": {
+        "username": { "type": "string", "format": "email" },
+        "password": { "type": "string", "minLength": 2 },
+        "name": { "type": "string", "minLength": 2 },
+        "newsLetterEnable": { "type": "boolean" },
+        "receiveEmailEnable": { "type": "boolean" }
+    }
+}

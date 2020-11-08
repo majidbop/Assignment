@@ -17,7 +17,7 @@ const createApp = (app: any) => {
     app.use(errorMiddleware)
 }
 
-export const start = async () => {
+const start = async () => {
     const app = express()
     try {
         log.info('App is starting')
@@ -31,3 +31,9 @@ export const start = async () => {
     }
 }
 
+start()
+    .then(() => { })
+    .catch((error) => {
+        console.log(`server ended with error:\n${error} `)
+        process.exit(1)
+    })

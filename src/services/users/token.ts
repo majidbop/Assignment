@@ -3,7 +3,7 @@ import { insertToken } from '../../drivers/users'
 import log from '../../logger/log'
 import { Token } from '../../models/database/token'
 import { User } from '../../models/database/user'
-const jwtSecret: string = 'Th!$Is$eCR3tKeY' //Todo read from secret config
+const jwtSecret: string = 'Th!$Is$eCR3tKeY' // Todo read from secret config
 
 export async function generateToken(user: User): Promise<Token> {
     const payload = { username: user.username, id: user.id };
