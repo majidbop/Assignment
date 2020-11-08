@@ -1,7 +1,4 @@
-# search-app
-
-[![LoopBack](https://github.com/strongloop/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
-
+# Assignment
 Author: Majid Lashgarian <madjid.80@gmail.com>
 
 # Problem
@@ -46,12 +43,14 @@ You can easily run application by run the following command:
 docker-compose run
 ```
 # DataSource
+
 The framework designed to support Mysql, MongoDb, inMemory and Sqlite data sources but here we use Mysql. 
 ## Mysql
 The main datasource in this project is mysql 5.7 which is running inside docker
 ## Migration script
 We are using FlyWay DB version control which is a java migration tool and version control but really fit and easy to populate, create, undo and versioning DB. 
 The migration command automatically run in docker-compose in separate docker.
+
 # Models
 
 ## Entities
@@ -108,6 +107,7 @@ Example:
 | 2 | snowboarding | 1 |
 
 ## Relations
+
 ### Competition-Athlete
 
 | Column   | Type  | isRequire |
@@ -117,6 +117,7 @@ Example:
 | compId | int | Yes |
 
 ### Skills-Athlete
+>>>>>>> 5a7c7e9613317f122cf5b236c871fb3bdab57352
 
 | Column   | Type  | isRequire |
 | ---------|-------|--------|
