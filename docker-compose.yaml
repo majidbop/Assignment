@@ -38,7 +38,7 @@ services:
     environment:
       - PORT=80
       - LOG_CONSOLE_LEVEL=Debug
-      - DB_ADDRESS=127.0.0.1
+      - DB_ADDRESS=mysql
       - DB_USER=root
       - DB_PASS=${DB_PASS}
       - DB_NAME=test

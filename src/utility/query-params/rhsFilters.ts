@@ -1,6 +1,7 @@
 import url from 'url'
 import { flatten } from 'lodash'
 import { BadRequestError } from '../../errors/badRequestError'
+import { Filter } from '../../models/interfaces'
 
 const filterParser = (validFilters: string[], type: string) => (filterName: (string | string[])) => (query: any) => {
     let parameter
@@ -35,7 +36,7 @@ const filterParser = (validFilters: string[], type: string) => (filterName: (str
     })
 }
 
-const getRhsFilters = (requestUrl: string, ...parsers: any) => {
+const getRhsFilters = (requestUrl: string, ...parsers: any): Filter[] => {
     const { query } = url.parse(requestUrl, true)
 
     return flatten(parsers.map((parser: any) => parser(query)))
