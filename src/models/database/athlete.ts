@@ -3,5 +3,4 @@ export interface Athlete {
     firstName: string;
     lastName: string;
     bDay: Date;
-    createdAt: Date
 };

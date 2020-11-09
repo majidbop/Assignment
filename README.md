@@ -42,6 +42,17 @@ You can easily run application by run the following command:
 ```
 docker-compose run
 ```
+# Search over dataset
+you just need to call `/v1/athletes/` url on GET http protocol on localhost:80 and then you can send your query with rhs filter as query parameter like below
+```
+curl http://localhost:80/v1/athletes/\?page\=0\&limit\=10\&skill\=exact:Winter+sports\&champions\=exact:World+Snowboard+Tour
+```
+```
+age=(gt|gte|lt|lte):<value>, 
+name=(exact|contains):<value>,
+skill=(exact|contains):<value>,
+champions=(exact|contains):<value>,
+````
 # DataSource
 
 The framework designed to support Mysql, MongoDb, inMemory and Sqlite data sources but here we use Mysql. 
@@ -134,8 +145,7 @@ Unfortunately, because of tight deadline prefer to don't right the web app by TD
 - [x] Data migration and dump file
 - [x] Model for Skills, Competition, skills and all relation in between
 - [x] DB sources for mysql
-- [ ] Get Controllers
-- [ ] Search unit test
+- [x] Get Controllers
 - [ ] Create Controllers
 - [ ] Unit tests
 - [ ] code coverage at least 80%

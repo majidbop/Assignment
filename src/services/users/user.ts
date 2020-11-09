@@ -2,7 +2,7 @@ import { User } from "../../models/database/user"
 import { Md5 } from 'ts-md5/dist/md5';
 import log from '../../logger/log'
 import * as userDao from '../../drivers/users'
-import { getSpecificUserByUsername } from "../../founders/users";
+import { getSpecificUserByUsername } from "../../finders/users";
 import { BadRequestError } from "../../errors/badRequestError";
 export async function registerUser(username: string, password: string, name: string): Promise<User> {
     log.info("Register user called in user services called");

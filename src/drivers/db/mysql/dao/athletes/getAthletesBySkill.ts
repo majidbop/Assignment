@@ -3,7 +3,6 @@ import { Filter } from '../../../../../models/interfaces';
 import { BadRequestError } from '../../../../../errors/badRequestError';
 import { BaseError } from '../../../../../errors/baseError';
 import log from '../../../../../logger/log';
-import { User } from '../../../../../models/database/user';
 import { runQuery } from '../../queryUtility';
 import { filtersConditions } from '../../rhsFilters';
 import { Skill } from '../../../../../models/database/skill';
@@ -30,6 +29,9 @@ export async function getAthleteBySkill(filters: Filter[]): Promise<number[]> {
         log.info(`getAthleteBySkill called in Mysql`)
         log.debug(`going to select skills from DB by ${JSON.stringify(filters)}`)
         const selectedSkills = await getSelectedSkills(filters);
+        if (selectedSkills.length == 0) {
+            return [];
+        }
         const athletesBySkillsFilter = [{ filter: "in", name: "skill_id", value: selectedSkills }];
         log.debug(`going to select athletes by skills from DB by ${JSON.stringify(athletesBySkillsFilter)}`)
         const selectedAthletes: any[] = await runQuery(

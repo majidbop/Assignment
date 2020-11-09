@@ -3,7 +3,7 @@ import {
     getRhsFilters, string, number, array,
 } from '../../../../utility/query-params/rhsFilters'
 import { getPaginationParams } from '../../../../utility/query-params/pagination'
-import { getAthletes } from '../../../../founders/athletes'
+import { getAthletes } from '../../../../finders/athletes'
 
 export const searchAthletes = async (req: any, res: any, next: any) => {
     try {
@@ -17,8 +17,8 @@ export const searchAthletes = async (req: any, res: any, next: any) => {
 
         )
 
-        getAthletes(filters, page, limit)
-        res.send({ page, limit, filters, results: [] });
+        const athletes = await getAthletes(filters, page, limit)
+        res.send({ page, limit, filters, results: athletes });
     } catch (error) {
         next(error)
     }
