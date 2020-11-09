@@ -45,16 +45,20 @@ You can easily run application by run the following command:
 docker-compose run
 ```
 # Search over dataset
-you just need to call `/v1/athletes/` url on GET http protocol on localhost:80 and then you can send your query with rhs filter as query parameter like below
+you just need to call `/v1/athletes/` url on GET http protocol on `localhost:80` and then you can send your query with rhs filter as query parameter like below
 ```
-curl http://localhost:80/v1/athletes/\?page\=0\&limit\=10\&skill\=exact:Winter+sports\&champions\=exact:World+Snowboard+Tour
+curl http://locslhost:80/v1/athletes/\?page\=0\&limit\=10\&skill\=exact:Winter+sports\&champions\=exact:World+Snowboard+Tour
 ```
+available search:
 ```
-age=(gt|gte|lt|lte):<value>, 
 name=(exact|contains):<value>,
 skill=(exact|contains):<value>,
 champions=(exact|contains):<value>,
-````
+```
+coming soon search:
+```
+age=(gt|gte|lt|lte):<value>, 
+```
 # DataSource
 
 The framework designed to support Mysql, MongoDb, inMemory and Sqlite data sources but here we use Mysql. 
