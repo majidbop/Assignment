@@ -35,8 +35,10 @@ please ensure you install docker in your computer
 - Docker
 Set following environment variable in your command line before going to next step
 ```
-export DB_PASSWORD=<db-password>
+ export DB_PASS=<your-password>
 ```
+then please open `/database/conf/flyway.conf` and set your password as `flyway.password`
+
 ## docker
 You can easily run application by run the following command:
 ```
